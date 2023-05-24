@@ -5,7 +5,7 @@ on:
 
 jobs:
   job1:
-    uses: https://github.com/ashu-parida-hpe/github_action_demo/blob/main/.github/workflows/called-workflow.yml@main
+    uses: ashu-parida-hpe/github_action_demo/blob/main/.github/workflows/called-workflow.yml@main
 
   job2:
     runs-on: ubuntu-latest
