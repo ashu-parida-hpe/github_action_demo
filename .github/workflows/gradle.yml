@@ -31,7 +31,7 @@ jobs:
       with:
         gradle-version: 8.1.1
     - name: Build with Gradle
-      run: gradle build
+      run: gradle build -x test
   
   tests:
     needs: build
