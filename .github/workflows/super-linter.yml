@@ -27,6 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CREATE_LOG_FILE: true
           LOG_FILE: super-linter.log
+          LOG_LEVEL: ERROR
       - name: Publish Super-Linter reports
         if: always()
         uses: actions/upload-artifact@v2
