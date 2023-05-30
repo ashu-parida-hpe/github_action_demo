@@ -30,7 +30,7 @@ jobs:
       
       - name: Filter Error Lines
         if: always()
-        run: grep -F "\[ERROR\]" super-linter.log >filter-super-linter.log 
+        run: grep "\[ERROR\]" super-linter.log >filter-super-linter.log 
 
       - name: Publish Super-Linter reports
         if: always()
