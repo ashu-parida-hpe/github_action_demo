@@ -29,6 +29,7 @@ jobs:
           LOG_FILE: super-linter.log
       
       - name: Filter Error Lines
+        if: always()
         run: grep "ERROR" super-linter.log >filter-super-linter.log   
       - name: Publish Super-Linter reports
         if: always()
