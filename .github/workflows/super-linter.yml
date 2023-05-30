@@ -28,7 +28,7 @@ jobs:
           CREATE_LOG_FILE: true
           LOG_FILE: super-linter.log
       - name: Publish Super-Linter reports
-        if: ${{ always() }}
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: Super-Linter Reports
