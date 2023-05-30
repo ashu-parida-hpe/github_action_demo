@@ -27,10 +27,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CREATE_LOG_FILE: true
           LOG_FILE: super-linter.log
-          LOG_LEVEL: ERROR
+      
+      - name: Filter Error Lines
+        run: grep "ERROR" super-linter.log >filter-super-linter.log   
       - name: Publish Super-Linter reports
         if: always()
         uses: actions/upload-artifact@v2
         with:
           name: Super-Linter Reports
-          path: super-linter.log    
+          path: filter-super-linter.log    
