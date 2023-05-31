@@ -55,4 +55,10 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Test Reports
-        path: app/build/reports/tests/test      
+        path: app/build/reports/tests/test
+    - name: Publish war for deployment
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: War files
+        path: app/build/libs            
