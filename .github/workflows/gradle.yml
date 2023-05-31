@@ -32,6 +32,12 @@ jobs:
         gradle-version: 8.1.1
     - name: Build with Gradle
       run: gradle build -x test
+    - name: Publish war for deployment
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: War files
+        path: app/build/libs  
   
   tests:
     needs: build
@@ -56,9 +62,4 @@ jobs:
       with:
         name: Test Reports
         path: app/build/reports/tests/test
-    - name: Publish war for deployment
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: War files
-        path: app/build/libs            
+                
