@@ -81,7 +81,7 @@ jobs:
       env:
         SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
       with:
-        source-directory: 'app/build/test-results/test/TEST-sample.java.app.AppTest.xml'
+        source-directory: 'app'
         destination-github-username: 'ashu-parida-hpe'
         destination-repository-name: 'store-reports'
         user-email: ashutosh.parida@hpe.com
