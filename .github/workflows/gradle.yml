@@ -10,8 +10,7 @@ name: Java CI with Gradle
 on:
   workflow_call:
   
-permissions:
-  contents: write
+permissions: read-all
 
 jobs:
   
@@ -81,7 +80,7 @@ jobs:
       env:
         SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
       with:
-        source-directory: 'app'
+        source-directory: 'app/build/test-results/test/TEST-sample.java.app.AppTest.xml'
         destination-github-username: 'ashu-parida-hpe'
         destination-repository-name: 'store-reports'
         user-email: ashutosh.parida@hpe.com
