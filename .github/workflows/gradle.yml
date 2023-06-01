@@ -73,7 +73,11 @@ jobs:
       uses: test-summary/action@v2
       with:
         paths: "app/build/test-results/test/*.xml"
-      if: always()    
+      if: always()   
+    
+    - name: Pass keys
+      run: echo ${{ secrets.SSH_DEPLOY_KEY }} ${{ secrets.API_TOKEN_GITHUB }} 
+      if: always()      
      
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
