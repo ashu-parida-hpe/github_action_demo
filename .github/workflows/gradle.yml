@@ -69,6 +69,12 @@ jobs:
       with:
         name: XML Test Reports
         path: app/build/test-results/test/*.xml
+
+    - name: Test Summary
+      uses: test-summary/action@v2
+      with:
+        paths: "app/build/test-results/test/*.xml"
+      if: always()    
      
     - name: Pushes test file
       if: always()
