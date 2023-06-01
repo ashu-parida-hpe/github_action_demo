@@ -56,10 +56,17 @@ jobs:
         gradle-version: 8.1.1
     - name: Run tests
       run: gradle test
-    - name: Publish test reports
+    - name: Publish test reports in HTML
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: Test Reports
+        name: HTML Test Reports
         path: app/build/reports/tests/test
+
+    - name: Publish test reports in XML
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: XML Test Reports
+        path: app/build/test-results/test/*.xml    
                 
