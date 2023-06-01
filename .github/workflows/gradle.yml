@@ -68,5 +68,16 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: XML Test Reports
-        path: app/build/test-results/test/*.xml    
+        path: app/build/test-results/test/*.xml
+     
+    - name: Pushes test file
+      if: always()
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'app/build/test-results/test/TEST-sample.java.app.AppTest.xml'
+        destination_repo: 'dmnemec/release-test'
+        user_email: 'ashutosh.parida@hpe.com'
+        user_name: 'ashu-parida-hpe' 
                 
