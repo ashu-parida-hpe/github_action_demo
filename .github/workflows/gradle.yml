@@ -74,5 +74,6 @@ jobs:
       uses: test-summary/action@v2
       with:
         paths: "app/build/test-results/test/*.xml"
+        show: "all"
       if: always() 
                 
